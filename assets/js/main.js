@@ -58,4 +58,10 @@
   setInterval(function(){
     NextSlider();
   },5000)
+  window.addEventListener("scroll",function(){
+    var header = this.document.querySelector("header");
+    var navbar = this.document.querySelector(".navbar");
+    header.classList.toggle("sticky", window.scrollY > 0);
+    navbar.classList.toggle("sticky", window.scrollY > 0);
+  })
 })();

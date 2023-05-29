@@ -16,6 +16,13 @@ body {
 
 .navbar a {
   text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  transition: 2s;
+}
+
+.navbar.sticky a {
+  text-decoration: none;
   color: rgb(0, 0, 0);
   font-size: 1rem;
 }
@@ -25,9 +32,19 @@ body {
 }
 /*  HEADER  */
 header {
-  position: relative;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  transition: 0.6s;
   padding: 0 2rem;
-  background: #0482a8;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: rgba(0, 0, 0, 0.0);
+  z-index: 100000;
+}
+header.sticky {
+  padding: 0 2rem;
+  background: #ffffff;
 }
 
 .navbar {
@@ -65,8 +82,8 @@ header {
 .dropdown_menu {
   display: none;
   position: absolute;
-  right: 2rem;
-  top: 60px;
+  right: 4rem;
+  top: 80px;
   height: 0px;
   width: 300px;
   background: rgba(0, 0, 0, 0.1);
@@ -74,11 +91,12 @@ header {
   border-radius: 10px;
   overflow: hidden;
   transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 9999; /* Agrega esta línea */
 }
 
 .dropdown_menu a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 1rem;
 }
 
